@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS Table</title>
+	<style type="text/css">
+		table, th, td {
+			border: 1px solid gray;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+
+		table tr:nth-child(odd) {
+			background-color: #f2f2f2; 
+		}
+
+		table tr:nth-child(even) {
+			background-color: #ffffff; 
+		}
+	</style>
+</head>
+<body>
+<h2>AngularJS Sample Application</h2>
+
+<div ng-app="mainApp" ng-controller="StudentController">
+	<table border="0">
+		<tr>
+			<td>Enter first name:</td>
+			<td><input type="text" ng-model="student.firstName"></td>
+		</tr>
+		<tr>
+			<td>Enter last name:</td>
+			<td><input type="text" ng-model="student.lastName"></td>
+		</tr>
+		<tr>
+			<td>Name:</td>
+			<td>{{ student.fullName() }}</td>
+		</tr>
+		<tr>
+			<td>Search</td>
+			<td><input type="text" ng-model="subjectName"></td>
+		</tr>
+		<tr>
+			<td>Subjects:</td>
+			<td>
+				<table border="0">
+					<tr>
+						<th>Name</th>
+						<th>Marks</th>
+					</tr>
+					<tr ng-repeat="subject in student.subjects | filter:subjectName | orderBy:'marks'">
+						<td>{{ subject.name }}</td>
+						<td>{{ subject.marks }}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>	
+</div>
+
+<script src="angular.min.js"></script>
+<script src="js06/app.js"></script>
+<script src="js06/controllers/MainController.js"></script>
+</body>
+</html>
+
+<!-- AngularJS - Tables -->
+<!-- https://www.tutorialspoint.com/angularjs/angularjs_tables.htm -->
+<!-- S.01 -->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS - HTML DOM - S.01</title>
+</head>
+<body ng-app="app">
+<h2>AngularJS Example</h2>
+<table border="0" ng-controller="ButtonController" ng-init="showhide=true">
+	<tr>
+		<td><input type="checkbox" ng-model="enabdisab"> Disable Button</td>
+		<td><button ng-disabled="enabdisab">{{ enabdisab }} disable</button></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" ng-model="showhide"> Show Button</td>
+		<td><button ng-show="showhide">Show {{ showhide }}</button></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" ng-model="showhide2"> Show Hide</td>
+		<td><button ng-hide="showhide2">Hide {{ showhide2 }}</button></td>
+	</tr>
+	<tr>
+		<td ng-click="add()">Counter data is {{ data }}</td>
+	</tr>
+
+
+<script src="angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('app', []);
+	app.controller('ButtonController', function($scope) {
+		$scope.data = 0;
+		$scope.add = function() {
+			$scope.data += 1;
+		}
+	});
+</script>
+</table>
+</body>
+</html>
+
+<!-- AngularJS - HTML DOM -->
+<!-- https://www.tutorialspoint.com/angularjs/angularjs_html_dom.htm -->
+<!-- S.01 -->

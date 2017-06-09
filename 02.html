@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>02</title>
+</head>
+<body>
+<h1>Contoh Aplikasi 02</h1>
+
+<div ng-app="" ng-init="countries=[{locale:'en-US', name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]">
+	<p>Enter your name: <input type="text" ng-model="name"></p>
+	<p>Hello <span ng-bind="name"></span>!</p>
+	<p>List of Countries with locale:</p>
+
+	<ol>
+		<li ng-repeat="country in countries">
+			{{ 'Country: ' + country.locale + ' Name: ' + country.name }}
+		</li>
+	</ol>
+</div>
+<script src="angular.min.js"></script>
+</body>
+</html>
+
+<!-- AngularJS - Directives -->
+<!-- https://www.tutorialspoint.com/angularjs/angularjs_directives.htm -->
+<!-- S.01 -->

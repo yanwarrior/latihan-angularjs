@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS ng-view</title>
+</head>
+<body>
+
+<h2>AngularJS Sample Application</h2>
+<div ng-app="app">
+	<p><a href="#addStudent">Add Student</a></p>
+	<p><a href="#viewStudents">View Students</a></p>
+	<div ng-view></div>
+	
+	<script type="text/ng-template" id="addStudent.html">
+		<h2>Add Student</h2>
+		{{ message }}
+	</script>
+
+	<script type="text/ng-template" id="viewStudents.html">
+		<h2>View Students</h2>
+		{{ message }}
+	</script>
+</div>
+
+<script src="angular.min.js"></script>
+<script src="angular-route.min.js"></script>
+<script src="js11/app.js"></script>
+<script src="js11/config.js"></script>
+<script src="js11/controllers/MainController.js"></script>
+</body>
+</html>

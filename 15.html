@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS Dependency Injection</title>
+</head>
+<body>
+
+<h2>AngularJS Sample Application</h2>
+
+<div ng-app="app" ng-controller="SimpleController">
+	<p>Enter a number: <input type="number" ng-model="number"></p>
+	<button ng-click="square()">X<sup>2</sup></button>
+	<p>Result {{ result }}</p>	
+</div>
+
+
+<script src="angular.min.js"></script>
+<script src="js15/app.js"></script>
+<script src="js15/services/MainService.js"></script>
+<script src="js15/controllers/MainController.js"></script>
+</body>
+</html>

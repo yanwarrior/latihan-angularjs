@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>03</title>
+</head>
+<body>
+<h1>Sample Application</h1>
+<div ng-app="" ng-init="quantity=1; cost=30; student={firstname:'Yanwar', lastname:'Solahudin', rollno:101}; marks=[80, 67, 89, 90]">
+	<p>Hello {{ student.firstname + " " + student.lastname }}!</p>
+	<p>Expense on Books: {{ cost * quantity }} Rs</p>
+	<p>Roll No: {{ student.rollno }}</p>
+	<p>Marks(Math): {{ marks[3] }}</p>
+</div>
+<script src="angular.min.js"></script>
+</body>
+</html>
+
+<!-- AngularJS - Expressions -->
+<!-- https://www.tutorialspoint.com/angularjs/angularjs_expressions.htm -->
+<!-- S.01 -->

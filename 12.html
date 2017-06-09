@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS Scopes</title>
+</head>
+<body>
+<h2>AngularJS Sample Application</h2>
+
+<div ng-app="app" ng-controller="ShapeController">
+	<p>{{ message }} - {{ type }}</p>
+
+	<div ng-controller="CircleController">
+		<p>{{ message }} - {{ type }}</p>
+	</div>
+
+	<div ng-controller="SquareController">
+		<p>{{ message }} - {{ type }}</p>
+	</div>
+</div>
+
+<script src="angular.min.js"></script>
+<script src="js12/app.js"></script>
+<script src="js12/controllers/MainController.js"></script>
+</body>
+</html>

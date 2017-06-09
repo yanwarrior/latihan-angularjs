@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>04</title>
+</head>
+<body ng-app="mainApp">
+<h1>Sample Application 04</h1>
+
+<div ng-controller="MainController">
+	Enter firstname: <input type="text" ng-model="student.firstName"> <br>
+	Enter lastname: <input type="text" ng-model="student.lastName"> <br>
+
+	You are entering: {{ student.fullName() }}
+</div>
+
+<script src="angular.min.js"></script>
+<script src="js04/app.js"></script>
+<script src="js04/controllers/MainController.js"></script>
+</body>
+</html>
+
+<!-- AngularJS - Controllers -->
+<!-- https://www.tutorialspoint.com/angularjs/angularjs_controllers.htm -->
+<!-- S.01 -->

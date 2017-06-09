@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS Filter</title>
+</head>
+<body ng-app="app">
+
+<div ng-controller="MainController">
+	<table border="0">
+		<tr>
+			<td>Enter first name:</td>
+			<td><input type="text" ng-model="student.firstName"></td>
+		</tr>
+		<tr>
+			<td>Enter last name:</td>
+			<td><input type="text" ng-model="student.lastName"></td>
+		</tr>
+		<tr>
+			<td>Enter fees:</td>
+			<td><input type="text" ng-model="student.fees"></td>
+		</tr>
+		<tr>
+			<td>Enter subject:</td>
+			<td><input type="text" ng-model="subjectName"></td>
+		</tr>
+	</table>
+
+	<p></p>
+
+	<table border="0">
+		<tr>
+			<td colspan="2">Add Subjects</td>
+		</tr>
+		<tr>
+			<td>Subject name:</td>
+			<td><input type="text" ng-model="subjects.name"></td>
+		</tr>
+		<tr>
+			<td>Subject marks:</td>
+			<td><input type="text" ng-model="subjects.marks"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<button ng-click="student.addSubject()">Add</button>
+			</td>
+		</tr>
+	</table>
+
+	<p></p>
+
+	<table border="0">
+		<tr>
+			<td>Name in Upper Case:</td>
+			<td>{{ student.fullName() | uppercase }}</td>
+		</tr>
+		<tr>
+			<td>Name is Lower Case:</td>
+			<td>{{ student.fullName() | lowercase }}</td>
+		</tr>
+		<tr>
+			<td>fees:</td>
+			<td>{{ student.fees | currency }}</td>
+		</tr>
+		<tr>
+			<td>Subjects:</td>
+			<td>
+				<ul>
+					<li ng-repeat="subject in student.subjects | filter:subjectName | orderBy:'marks'">
+						{{ subject.name }}, marks: {{ subject.marks }}
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script src="angular.min.js"></script>
+<script src="js05/app.js"></script>
+<script src="js05/controllers/MainController.js"></script>
+</body>
+</html>
+
+<!-- AngularJS - Filters -->
+<!-- https://www.tutorialspoint.com/angularjs/angularjs_filters.htm -->
+<!-- S.01 -->
